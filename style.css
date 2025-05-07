@@ -1,0 +1,142 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: gainsboro;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* Ensures the main section takes up available space */
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(2, 1fr); /* Create two equal-width columns */
+    grid-gap: 20px; /* Add spacing between rows and columns */
+    padding: 20px; /* Add padding around the grid */
+}
+
+main div {
+    background-color: white; /* Optional: Add a background color */
+    padding: 10px; /* Add padding inside the divs */
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+footer {
+    background-color: grey;
+    text-align: center;
+    padding: 2px;
+    color: black;
+    margin: 0;
+}
+
+nav {
+    background-color: grey;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+h1 {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+
+}
+
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+}
+
+body.dark-mode nav {
+    background-color: #1e1e1e; /* Darker nav background */
+}
+
+body.dark-mode main div {
+    background-color: #1e1e1e; /* Darker background for columns */
+    color: #ffffff; /* Light text color */
+    border-color: #333; /* Adjust border color */
+}
+
+body.dark-mode footer {
+    background-color: #1e1e1e; /* Darker footer background */
+    color: #ffffff; /* Light text color */
+}
+
+/* Media query for screens smaller than 768px (e.g., tablets and phones) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center; /* Center the items */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack the links vertically */
+        gap: 10px; /* Add spacing between links */
+    }
+
+    main {
+        grid-template-columns: 1fr; /* Make columns stack vertically */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    main div {
+        margin-bottom: 20px; /* Add spacing between stacked sections */
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    footer {
+        padding: 10px; /* Adjust footer padding */
+        font-size: 14px; /* Adjust footer text size */
+    }
+}
+
+/* Media query for screens smaller than 480px (e.g., small phones) */
+@media (max-width: 480px) {
+    nav ul li {
+        margin: 0; /* Remove extra margin for smaller screens */
+    }
+
+    h1 {
+        font-size: 20px; /* Further reduce font size for very small screens */
+    }
+
+    main {
+        padding: 5px; /* Reduce padding even more */
+    }
+
+    main div {
+        padding: 5px; /* Reduce padding inside the divs */
+    }
+}
